@@ -148,7 +148,7 @@ function subStockView($param)
 					<th class="list_head">備考<?php fnOrder('NOTE', 'stockSearch') ?></th>
 				</tr>
 				<?php
-				$sql  = fnSqlStockList(1, $param);
+				$sql  = fnSqlStockList(0, $param);
 				$res  = mysqli_query($param["conn"], $sql);
 				$i = 0;
 				while ($row = mysqli_fetch_array($res)) {
