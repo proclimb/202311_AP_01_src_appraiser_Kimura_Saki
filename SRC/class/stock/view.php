@@ -253,7 +253,7 @@ function subStockEditView($param)
 			</tr>
 			<tr>
 				<th>担当</th>
-				<td><input type="text" name="charge" value="" /></td>
+				<td><input type="text" name="charge" value="<?php print $param["charge"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>ランク</th>
@@ -269,23 +269,23 @@ function subStockEditView($param)
 			</tr>
 			<tr>
 				<th>物件名<span class="red">（必須）</span></th>
-				<td><input type="text" name="article" id="name" value="" /></td>
+				<td><input type="text" name="article" id="name" value="<?php print $param["article"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>物件名（よみ）</th>
-				<td><input type="text" name="articleFuri" id="ruby" value="" /></td>
+				<td><input type="text" name="articleFuri" id="ruby" value="<?php print $param["articleFuri"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>部屋</th>
-				<td><input type="text" name="room" value="" /></td>
+				<td><input type="text" name="room" value="<?php print $param["room"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>面積</th>
-				<td><input type="text" name="area" value="" />㎡</td>
+				<td><input type="text" name="area" value="<?php print $param["area"] ?>" />㎡</td>
 			</tr>
 			<tr>
 				<th>最寄駅</th>
-				<td><input type="text" name="station" value="" /></td>
+				<td><input type="text" name="station" value="<?php print $param["station"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>距離</th>
@@ -301,31 +301,31 @@ function subStockEditView($param)
 			</tr>
 			<tr>
 				<th>業者名</th>
-				<td><input type="text" name="agent" value="" /></td>
+				<td><input type="text" name="agent" value="<?php print $param["agent"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>店舗名</th>
-				<td><input type="text" name="store" value="" /></td>
+				<td><input type="text" name="store" value="<?php print $param["store"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>担当者名</th>
-				<td><input type="text" name="cover" value="" /></td>
+				<td><input type="text" name="cover" value="<?php print $param["cover"] ?>" /></td>
 			</tr>
 			<tr>
 				<th>内見</th>
-				<td><input type="text" name="visitDT" value="" /> <a href="javascript:cal1.write();" onChange="cal1.getFormValue(); cal1.hide();"><img src="./images/b_calendar.png"></a><span id="cal1"></span></td>
+				<td><input type="text" name="visitDT" value="<?php print $param["visitDT"] ?>" /> <a href="javascript:cal1.write();" onChange="cal1.getFormValue(); cal1.hide();"><img src="./images/b_calendar.png"></a><span id="cal1"></span></td>
 			</tr>
 			<tr>
 				<th>机上金額</th>
-				<td><input type="text" name="deskPrice" value="" />万円</td>
+				<td><input type="text" name="deskPrice" value="<?php print $param["deskPrice"] ?>" />万円</td>
 			</tr>
 			<tr>
 				<th>売主希望金額</th>
-				<td><input type="text" name="vendorPrice" value="" />万円</td>
+				<td><input type="text" name="vendorPrice" value="<?php print $param["vendorPrice"] ?>" />万円</td>
 			</tr>
 			<tr>
 				<th>備考</th>
-				<td><textarea name="note" cols="50" rows="10"></textarea></td>
+				<td><textarea name="note" cols="50" rows="10"><?php print $param["note"] ?></textarea></td>
 			</tr>
 			<tr>
 				<th>仕入経緯</th>
@@ -343,7 +343,7 @@ function subStockEditView($param)
 
 		</table>
 
-		<a href="javascript:fnStockEditCheck();"><img src="./images/<?php print $param["btnImage"] ?>" /></a>　
+		<a href="javascript:fnStockEditCheck();" onclick="form.act.value='stockEditComplete';form.submit();"><img src="./images/<?php print $param["btnImage"] ?>" /></a>　
 		<a href="javascript:form.act.value='stockEditComplete';form.submit();"><img src="./images/btn_return.png" /></a>
 		<?php
 		if ($param["stockNo"]) {
