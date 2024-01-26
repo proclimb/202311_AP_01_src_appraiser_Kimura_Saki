@@ -176,15 +176,27 @@ function subStockView($param)
 						<td class="list_td<?php print $i; ?>"><?php print $insDT; ?></td>
 						<td class="list_td<?php print $i; ?>"><a href="javascript:form.act.value='stockEdit';form.stockNo.value=<?php print $stockNo; ?>;form.submit();"><?php print $article; ?></a></td>
 						<td class="list_td<?php print $i; ?>"><?php print $room; ?></td>
-						<td class="list_td<?php print $i; ?>" align="right"><?php print $area; ?></td>
+						<td class="list_td<?php print $i; ?>" align="right"><?php if ($area === "") {
+																				print "0.00";
+																			} else {
+																				print $area;
+																			} ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $station; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $distance; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $agent; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $store; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $cover; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $visitDT; ?></td>
-						<td class="list_td<?php print $i; ?>" align="right"><?php print $deskPrice; ?></td>
-						<td class="list_td<?php print $i; ?>" align="right"><?php print $vendorPrice; ?></td>
+						<td class="list_td<?php print $i; ?>" align="right"><?php if ($deskPrice == "") {
+																				print "0";
+																			} else {
+																				print $deskPrice;
+																			} ?></td>
+						<td class="list_td<?php print $i; ?>" align="right"><?php if ($vendorPrice == "") {
+																				print "0";
+																			} else {
+																				print $vendorPrice;
+																			} ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $note; ?></td>
 					</tr>
 				<?php
