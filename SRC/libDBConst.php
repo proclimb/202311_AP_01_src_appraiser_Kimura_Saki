@@ -30,12 +30,6 @@ function fnSqlConstList($flg, $sDel, $sArticle, $sConstTrader, $sConstFlg1, $sCo
 	if ($sArticle) {
 		$sql .= " AND ARTICLE LIKE '%$sArticle%'";
 	}
-	if ($sRoom) {
-		$sql .= " AND ROOM LIKE '%$sRoom%'";
-	}
-	if ($sAddress) {
-		$sql .= " AND ADDRESS LIKE '%$sAddress%'";
-	}
 	if ($sConstTrader) {
 		$sql .= " AND CONSTTRADER LIKE '%$sConstTrader%'";
 	}
@@ -180,7 +174,7 @@ function fnSqlConstUpdate(
 	$sql .= ",ELECTRICITYCHARGE = '$electricityCharge'";
 	$sql .= ",GASCHARGE = '$gasCharge'";
 	$sql .= ",LIGHTORDER = '$lightOrder'";
-	$sql .= " WHERE ARTICLENO = $articleNo";
+	$sql .= " WHERE ARTICLENO = '$articleNo'";
 
 	return ($sql);
 }
