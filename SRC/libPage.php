@@ -103,13 +103,13 @@ function fnOrderConstWork($n1,$n2,$a){
 <?php
 	}
 
-	if($_REQUEST['orderBy'] == $n2){
-?>
-<span class="red">▼</span>
-<?php
-	}else{
-?>
-<a href="javascript:form.act.value='<?php print $a;?>';form.orderBy.value='<?php print $n2;?>';form.orderTo.value='asc';form.sPage.value=1;form.submit();">▼</a>
+	if ($_REQUEST['orderBy'] == $n2) {
+	?>
+		<span class="red">▼</span>
+	<?php
+	} else {
+	?>
+		<a href="javascript:form.act.value='<?php print $a; ?>';form.orderBy.value='<?php print $n2; ?>';form.orderTo.value='desc';form.sPage.value=1;form.submit();">▼</a>
 <?php
 	}
 }
