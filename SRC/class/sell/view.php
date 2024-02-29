@@ -151,12 +151,32 @@ function subSellView($param)
 						<td class="list_td<?php print $i ?>"><?php print $article ?></td>
 						<td class="list_td<?php print $i ?>"><?php print $address ?></td>
 						<td class="list_td<?php print $i ?>"><?php print $station ?></td>
-						<td class="list_td<?php print $i ?>"><?php print $foot ?></td>
-						<td class="list_td<?php print $i ?>"><?php print $years ?></td>
-						<td class="list_td<?php print $i ?>"><?php print $floor ?></td>
-						<td class="list_td<?php print $i ?>" align="right"><?php print $area ?></td>
+						<td class="list_td<?php print $i ?>"><?php if ($foot == 0) {
+																	print 0;
+																} else {
+																	print $foot;
+																} ?></td>
+						<td class="list_td<?php print $i ?>"><?php if ($years == 0) {
+																	print 0;
+																} else {
+																	print $years;
+																} ?></td>
+						<td class="list_td<?php print $i ?>"><?php if ($floor == 0) {
+																	print 0;
+																} else {
+																	print $floor;
+																} ?></td>
+						<td class="list_td<?php print $i ?>" align="right"><?php if ($area == 0.00) {
+																				print 0;
+																			} else {
+																				print $area;
+																			} ?></td>
 						<td class="list_td<?php print $i ?>"><?php print $seller ?></td>
-						<td class="list_td<?php print $i ?>" align="right"><?php print $price ?>万</td>
+						<td class="list_td<?php print $i ?>" align="right"><?php if ($price == 0) {
+																				print 0;
+																			} else {
+																				print $price;
+																			} ?>万</td>
 						<td class="list_td<?php print $i ?>"><?php print $note ?></td>
 						<td class="list_td<?php print $i ?>"><a href="javascript:form.act.value='sellEdit';form.sellNo.value=<?php print $sellNo ?>;form.submit();"><img src="./images/edit.png" /></a>
 							<a href="javascript:fnSellDeleteCheck(<?php print $sellNo ?>,'<?php print $article ?>');"><img src="./images/delete.png" /></a>
@@ -234,19 +254,35 @@ function subSellEditView($param)
 			</tr>
 			<tr>
 				<th>徒歩<span class="red">（必須）</span></th>
-				<td><input type="text" name="foot" value="<?php print $param["foot"] ?>" />分</td>
+				<td><input type="text" name="foot" value="<?php if ($param["foot"] == 0) {
+																print 0;
+															} else {
+																print $param["foot"];
+															} ?>" />分</td>
 			</tr>
 			<tr>
 				<th>築年<span class="red">（必須）</span></th>
-				<td><input type="text" name="years" value="<?php print $param["years"] ?>" />年</td>
+				<td><input type="text" name="years" value="<?php if ($param["years"] == 0) {
+																print 0;
+															} else {
+																print $param["years"];
+															} ?>" />年</td>
 			</tr>
 			<tr>
 				<th>階数<span class="red">（必須）</span></th>
-				<td><input type="text" name="floor" value="<?php print $param["floor"] ?>" />階</td>
+				<td><input type="text" name="floor" value="<?php if ($param["floor"] == 0) {
+																print 0;
+															} else {
+																print $param["floor"];
+															} ?>" />階</td>
 			</tr>
 			<tr>
 				<th>専有面積<span class="red">（必須）</span></th>
-				<td><input type="text" name="area" value="<?php print $param["area"] ?>" />㎡</td>
+				<td><input type="text" name="area" value="<?php if ($param["area"] == 0.00) {
+																print 0;
+															} else {
+																print $param["area"];
+															} ?>" />㎡</td>
 			</tr>
 			<tr>
 				<th>売主<span class="red">（必須）</span></th>
@@ -254,7 +290,11 @@ function subSellEditView($param)
 			</tr>
 			<tr>
 				<th>価格<span class="red">（必須）</span></th>
-				<td><input type="text" name="price" value="<?php print $param["price"] ?>" />万円</td>
+				<td><input type="text" name="price" value="<?php if ($param["price"] == 0) {
+																print 0;
+															} else {
+																print $param["price"];
+															} ?>" />万円</td>
 			</tr>
 			<tr>
 				<th>備考</th>
