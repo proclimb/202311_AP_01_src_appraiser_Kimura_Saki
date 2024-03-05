@@ -404,7 +404,7 @@ function subFManagerView()
 								<?php
 								if ($pdfNo) {
 								?>
-									<td width="10%"><a href="./pdfs/<?php print substr('0000000000' . $pdfNo, -10) . '.pdf'; ?>" target="_blank">表示</a></td>
+									<td width="10%"><a href="./pdfs/<?php print substr('0000000000' . $docNo, -10) . '.pdf'; ?>" target="_blank">表示</a></td>
 									<td width="10%"><a href="javascript:form.act.value='fManagerViewEdit';form.pdfNo.value=<?php print $pdfNo; ?>;form.submit();">編集</a></td>
 								<?php
 								} else {
@@ -554,7 +554,7 @@ function subFManagerViewEditComplete()
 	}
 
 	if ($_FILES['pdfFile']['tmp_name']) {
-		move_uploaded_file($_FILES['pdfFile']['tmp_name'], './pdfs/' . $pdfNo . '.pdf');
+		move_uploaded_file($_FILES['pdfFile']['tmp_name'], './pdfs/' . substr('0000000000' . $docNo, -10) . '.pdf');
 	}
 
 	$_REQUEST['act'] = 'fManagerView';
