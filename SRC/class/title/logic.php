@@ -11,7 +11,7 @@ function subFTitle()
         $param["sDel"] = 1;
     }
 
-    if (! $param["orderBy"]) {
+    if (!$param["orderBy"]) {
         $param["orderBy"] = 'CLASSNO,SEQNO';
         $param["orderTo"] = 'asc';
     }
@@ -184,7 +184,7 @@ function subFTitleDelete()
         $res = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($res)) {
             $sql = fnSqlFTitleDelete($row['DOCNO']);
-            $result = mysqil_query($conn, $sql);
+            $result = mysqli_query($conn, $sql);
         }
     } else {
         $sql = fnSqlFTitleDelete($DocNo);
